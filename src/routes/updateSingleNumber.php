@@ -4,7 +4,7 @@ $app->post('/api/Telnyx/updateSingleNumber', function ($request, $response, $arg
 
     //checking properly formed json
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['username', 'apiToken', 'numberId']);
+    $validateRes = $checkRequest->validate($request, ['username', 'apiToken', 'number']);
     if (!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback'] == 'error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {
@@ -12,7 +12,7 @@ $app->post('/api/Telnyx/updateSingleNumber', function ($request, $response, $arg
     }
     //forming request to vendor API
 
-    $query_str = $settings['api_url'] . 'origination/numbers/' . $post_data['args']['numberId'];
+    $query_str = $settings['api_url'] . 'origination/numbers/' . $post_data['args']['number'];
     $params = [
         'connection_id' => 'connectionId',
         'primary_ip' => 'primaryIp',
