@@ -11,7 +11,7 @@ $app->post('/api/Telnyx/getLRN', function ($request, $response, $args) {
         $post_data = $validateRes;
     }
     //forming request to vendor API
-    $query_str = 'http://lrnlookup.telnyx.com/v1/lrn/'.$post_data['args']['number'];
+    $query_str = 'http://lrnlookup.telnyx.com/v1/LRN/'.$post_data['args']['number'];
     $body['api_token'] = $post_data['args']['apiToken'];
     $client = new \GuzzleHttp\Client();
     try {
