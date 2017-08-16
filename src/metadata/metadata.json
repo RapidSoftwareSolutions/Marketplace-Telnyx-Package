@@ -1,0 +1,5742 @@
+{
+  "package": "Telnyx",
+  "tagline": "Telnyx API",
+  "description": "Telnyx is a VoIP telecom service provider, providing a cloud-based platform that offers access to carrier grade voice services over the internet.",
+  "image": "http:\/\/logo.clearbit.com\/telnyx.com",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-Telnyx-Package",
+  "keywords": [
+    "API",
+    "VOIP",
+    "VOIP-provider",
+    "SMS",
+    "phone",
+    "calls"
+  ],
+  "accounts": {
+    "domain": "telnyx.com",
+    "credentials": [
+      "username",
+      "apiToken"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "getCallerInformation",
+      "description": "Returns the caller information (if found) for a telephone number",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "number",
+          "type": "String",
+          "info": "The requested telephone number in E.164 format, may or may not begin with \"1\"",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLRN",
+      "description": "Gets LRN object",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "number",
+          "type": "String",
+          "info": "The requested telephone number in E.164 format, may or may not begin with \"1\"",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getExtendedLRN",
+      "description": "Gets ExtendedLRN object",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "number",
+          "type": "String",
+          "info": "The requested telephone number in E.164 format, may or may not begin with \"1\"",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMessagingProfiles",
+      "description": "Use this endpoint to get messaging profiles associated with your Telnyx account.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createMessagingProfile",
+      "description": "Use this endpoint to create a new messaging profile, required for SMS-capable numbers.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "Name of the profile",
+          "required": true
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Url of the profile",
+          "required": false
+        },
+        {
+          "name": "failoverUrl",
+          "type": "String",
+          "info": "Failover url of the profile",
+          "required": false
+        },
+        {
+          "name": "method",
+          "type": "String",
+          "info": "Method of the profile",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleMessagingProfile",
+      "description": "Use this endpoint to retrieve a messaging profile associated with your Telnyx account.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "profileId",
+          "type": "String",
+          "info": "Id of the profile",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateMessagingProfile",
+      "description": "Use this endpoint to update a messaging profile associated with your Telnyx account.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "profileId",
+          "type": "String",
+          "info": "Id of the profile",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "Name of the profile",
+          "required": false
+        },
+        {
+          "name": "url",
+          "type": "String",
+          "info": "Url of the profile",
+          "required": false
+        },
+        {
+          "name": "failoverUrl",
+          "type": "String",
+          "info": "Failover url of the profile",
+          "required": false
+        },
+        {
+          "name": "method",
+          "type": "String",
+          "info": "Method of the profile",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "generateMessagingProfileSecret",
+      "description": "To send messages from one of your numbers, you must authenticate using the unique secret/token that is on the associated messaging profile. Use this endpoint to generate a new secret.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "profileId",
+          "type": "String",
+          "info": "Id of the profile",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMessagingProfileSmsTNs",
+      "description": "Use this endpoint to retrieve a list of SMS-enabled numbers associated with a messaging profile on your Telnyx account.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "profileId",
+          "type": "String",
+          "info": "Id of the profile",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMessagingProfileTNs",
+      "description": "Use this endpoint to retrieve a list of numbers to associate with one of your messaging profiles.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Filter numbers by connection ID",
+          "required": false
+        },
+        {
+          "name": "hasMessagingProfile",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Only show numbers associated with a messaging profile",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteMessagingProfile",
+      "description": "Use this endpoint to delete a messaging profile from your Telnyx account.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "profileId",
+          "type": "String",
+          "info": "Id of the profile",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getTNMessagingSettings",
+      "description": "Use this endpoint to get the settings for one of your SMS-enabled numbers.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "number",
+          "type": "String",
+          "info": "The number in e164 format (without the plus sign)",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateTNMessagingSettings",
+      "description": "Use this endpoint to update the settings for one of your SMS-enabled numbers.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "number",
+          "type": "String",
+          "info": "The number in e164 format (without the plus sign)",
+          "required": true
+        },
+        {
+          "name": "profileId",
+          "type": "String",
+          "info": "Id of the messaging profile",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getActiveSendRequests",
+      "description": "Use this endpoint to expose information about active outbound requests.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "sendSMS",
+      "description": "Use this endpoint to send a message from an SMS-enabled number.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "profileSecret",
+          "type": "String",
+          "info": "This is the unique, private secret/password belonging to the from number’s messaging profile.",
+          "required": true
+        },
+        {
+          "name": "from",
+          "type": "String",
+          "info": "The source number, in e164 format. This number must be attached to a messaging profile.",
+          "required": true
+        },
+        {
+          "name": "to",
+          "type": "String",
+          "info": "The destination number, in e164 format. ",
+          "required": true
+        },
+        {
+          "name": "message",
+          "type": "String",
+          "info": "The message body.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listAddresses",
+      "description": "Returns all Addresses the user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        },
+        {
+          "name": "includeNonAddressBook",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Filter to indicate if addresses not in the address book should be shown",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createAddress",
+      "description": "Create an Address",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "firstName",
+          "type": "String",
+          "info": "First name",
+          "required": true
+        },
+        {
+          "name": "lastName",
+          "type": "String",
+          "info": "Last name",
+          "required": true
+        },
+        {
+          "name": "businessName",
+          "type": "String",
+          "info": "Business name",
+          "required": false
+        },
+        {
+          "name": "phoneNumber",
+          "type": "String",
+          "info": "Phone number",
+          "required": true
+        },
+        {
+          "name": "streetAddress",
+          "type": "String",
+          "info": "Address first line",
+          "required": true
+        },
+        {
+          "name": "extendedAddress",
+          "type": "String",
+          "info": "Address second line",
+          "required": false
+        },
+        {
+          "name": "locality",
+          "type": "String",
+          "info": "Locality (city for US addresses)",
+          "required": true
+        },
+        {
+          "name": "administrativeArea",
+          "type": "String",
+          "info": "Administrative area (state for US addresses)",
+          "required": false
+        },
+        {
+          "name": "postalCode",
+          "type": "String",
+          "info": "Postal code",
+          "required": false
+        },
+        {
+          "name": "countryCode",
+          "type": "String",
+          "info": "2-digit country code",
+          "required": false
+        },
+        {
+          "name": "addressBook",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Indicates if the address should be considered part of your 'address book' or not; addresses that are in your address book are shown by default when listing addresses, those not in your address book are not. ",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleAddress",
+      "description": "Gets a single Address based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "addressId",
+          "type": "String",
+          "info": "Id of the address",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateAddress",
+      "description": "Update a single Address based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "addressId",
+          "type": "String",
+          "info": "Id of the address",
+          "required": true
+        },
+        {
+          "name": "firstName",
+          "type": "String",
+          "info": "First name",
+          "required": false
+        },
+        {
+          "name": "lastName",
+          "type": "String",
+          "info": "Last name",
+          "required": false
+        },
+        {
+          "name": "businessName",
+          "type": "String",
+          "info": "Business name",
+          "required": false
+        },
+        {
+          "name": "phoneNumber",
+          "type": "String",
+          "info": "Phone number",
+          "required": false
+        },
+        {
+          "name": "streetAddress",
+          "type": "String",
+          "info": "Address first line",
+          "required": false
+        },
+        {
+          "name": "extendedAddress",
+          "type": "String",
+          "info": "Address second line",
+          "required": false
+        },
+        {
+          "name": "locality",
+          "type": "String",
+          "info": "Locality (city for US addresses)",
+          "required": false
+        },
+        {
+          "name": "administrativeArea",
+          "type": "String",
+          "info": "Administrative area (state for US addresses)",
+          "required": false
+        },
+        {
+          "name": "postalCode",
+          "type": "String",
+          "info": "Postal code",
+          "required": false
+        },
+        {
+          "name": "countryCode",
+          "type": "String",
+          "info": "2-digit country code",
+          "required": false
+        },
+        {
+          "name": "addressBook",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Indicates if the address should be considered part of your 'address book' or not; addresses that are in your address book are shown by default when listing addresses, those not in your address book are not. ",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteAddress",
+      "description": "Delete a single Address based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "addressId",
+          "type": "String",
+          "info": "Id of the address",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listConnections",
+      "description": "Returns all Connections the user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        },
+        {
+          "name": "withIps",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Specify as true to include authorized IPs along with connections",
+          "required": false
+        },
+        {
+          "name": "withAuth",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Specify as true to include credential authentication details along with connections. Please note this only affects connections for which the authorization type is credential-based authentication.",
+          "required": false
+        },
+        {
+          "name": "withFQDNS",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Specify as true to include FQDN / domain details along with connections. Please note this only affects connections for which the authorization type is FQDN-based authentication.",
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "Select",
+          "options": [
+            "typeahead"
+          ],
+          "info": "Optional parameter to specify typeahead mode. Doing so limits the amount of details returned but speeds up calls.",
+          "required": false
+        },
+        {
+          "name": "orderBy",
+          "type": "Select",
+          "options": [
+            "created_at",
+            "connection_name",
+            "auth_type",
+            "active"
+          ],
+          "info": "Specify an ordering for the results.",
+          "required": false
+        },
+        {
+          "name": "sortDirection",
+          "type": "Select",
+          "options": [
+            "reverse"
+          ],
+          "info": "The sort_direction specifies in which way the ordering of the connections is applied.",
+          "required": false
+        },
+        {
+          "name": "filterConnectionName",
+          "type": "String",
+          "info": "Optional filtering parameter. If present, connections with at least a partial match will be returned. Matching is not case-sensitive. Requires at least three characters.",
+          "required": false
+        },
+        {
+          "name": "filterIpAddress",
+          "type": "String",
+          "info": " Optional filtering parameter. If present, only connections with one or more matching authorized IP addresses will be returned.",
+          "required": false
+        },
+        {
+          "name": "filterAuthUserName",
+          "type": "String",
+          "info": "Optional filtering parameter. If present, only connections of credential-based authentication will be returned, and only those with a user_name that is at least a partial match with the value provided. Requires at least three characters.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createConection",
+      "description": "Create new connection",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionName",
+          "type": "String",
+          "info": "Name of the connection",
+          "required": true
+        },
+        {
+          "name": "active",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Defaults to true",
+          "required": false
+        },
+        {
+          "name": "dnisNumberFormat",
+          "type": "Select",
+          "options": [
+            "0",
+            "1",
+            "2"
+          ],
+          "info": "E.164 = 0, Strip-1 = 1, Strip-2 = 2",
+          "required": false
+        },
+        {
+          "name": "timeout1xx",
+          "type": "Number",
+          "info": "Time(sec) before aborting if connection is not made (min: 1, max: 20)",
+          "required": false
+        },
+        {
+          "name": "timeout2xx",
+          "type": "Number",
+          "info": "Time(sec) before aborting if call is unanswered (min: 1, max: 600)",
+          "required": false
+        },
+        {
+          "name": "aniOverrideType",
+          "type": "Select",
+          "options": [
+            "always",
+            "normal",
+            "emergency"
+          ],
+          "info": "Specifies when we apply your ani_override setting. Only applies when ani_override is not blank.",
+          "required": false
+        },
+        {
+          "name": "aniOverride",
+          "type": "String",
+          "info": "Set a phone number as the ani_override value to override caller id number on outbound calls",
+          "required": false
+        },
+        {
+          "name": "sipCompactHeadersEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Defaults to true",
+          "required": false
+        },
+        {
+          "name": "transportProtocol",
+          "type": "Select",
+          "options": [
+            "UDP",
+            "TLS",
+            "TCP"
+          ],
+          "info": "One of UDP, TLS, or TCP. Applies only to connections with IP authentication or FQDN authentication.",
+          "required": false
+        },
+        {
+          "name": "thirdPartyControlEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Applies to calls sent TO this connection.",
+          "required": false
+        },
+        {
+          "name": "privacyZoneEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "By default, Telnyx does not send caller-id information when the caller has chosen to hide this information. When this option is enabled, Telnyx will send the SIP header Privacy:id plus the caller-id information so that the receiver side can choose when to hide it.",
+          "required": false
+        },
+        {
+          "name": "codecs",
+          "type": "List",
+          "structure": {
+            "name": "codec",
+            "type": "String",
+            "info": "Single codec"
+          },
+          "info": "Defines the list of codecs that Telnyx will send for inbound calls to a specific number on your portal account, in priority order. This only works when the Connection the number is assigned to uses Media Handling mode: default. OPUS and H.264 codecs are available only when using TCP or TLS transport for SIP",
+          "required": false
+        },
+        {
+          "name": "prackEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Enable PRACK messages as defined in RFC3262",
+          "required": false
+        },
+        {
+          "name": "defaultRoutingMethod",
+          "type": "Select",
+          "options": [
+            "sequential",
+            "round-robin"
+          ],
+          "info": "Default routing method to be used when a number is associated with the connection.",
+          "required": false
+        },
+        {
+          "name": "defaultPrimaryAuthorizedIpId",
+          "type": "Number",
+          "info": "The default primary IP to use for the number. Only settable if the connection is of IP authentication type. Value must be the ID of an authorized IP set on the connection.",
+          "required": false
+        },
+        {
+          "name": "defaultSecondaryAuthorizedIpId",
+          "type": "Number",
+          "info": "The default secondary IP to use for the number. Only settable if the connection is of IP authentication type. Value must be the ID of an authorized IP set on the connection.",
+          "required": false
+        },
+        {
+          "name": "defaultTertiaryAuthorizedIpId",
+          "type": "Number",
+          "info": "The default tertiary IP to use for the number. Only settable if the connection is of IP authentication type. Value must be the ID of an authorized IP set on the connection.",
+          "required": false
+        },
+        {
+          "name": "anchorsiteOverride",
+          "type": "Select",
+          "options": [
+            "Latency",
+            "Chicago, IL",
+            "Ashburn, VA",
+            "San Jose, CA",
+            "London, UK",
+            "Toronto, Canada",
+            "Vancouver, Canada"
+          ],
+          "info": "\"Latency\" directs Telnyx to route media through the site with the lowest round-trip time to the user's connection. Telnyx calculates this time using ICMP ping messages. This can be disabled by specifying a site to handle all media.",
+          "required": false
+        },
+        {
+          "name": "encryptedMedia",
+          "type": "Select",
+          "options": [
+            "SRTP",
+            "ZRTP"
+          ],
+          "info": "Enable use of SRTP or ZRTP for encryption. Valid values are those listed or null. Cannot be set to non-null if the transport_portocol is TLS.",
+          "required": false
+        },
+        {
+          "name": "instantRingbackEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "When set, ringback will not wait for indication before sending ringback tone to calling party.",
+          "required": false
+        },
+        {
+          "name": "t38ReinviteSource",
+          "type": "Select",
+          "options": [
+            "telnyx",
+            "customer",
+            "disabled",
+            "passthru",
+            "caller-passthru",
+            "callee-passthru"
+          ],
+          "info": "This setting only affects connections with Fax-type Outbound Profiles. The setting dictates whether or not Telnyx sends a t.38 reinvite. By default, Telnyx will send the re-invite. If set to `customer`, the caller is expected to send the t.38 reinvite.",
+          "required": false
+        },
+        {
+          "name": "aniNumberFormat",
+          "type": "Select",
+          "options": [
+            "+E.164",
+            "E.164",
+            "+E.164-national",
+            "E.164-national"
+          ],
+          "info": "This setting allows you to set the format with which the caller's number (ANI) is sent for inbound phone calls.",
+          "required": false
+        },
+        {
+          "name": "isupHeadersEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "When set, inbound phone calls will receive ISUP parameters via SIP headers. (Only when available and only when using TCP or TLS transport.) Defaults to false.",
+          "required": false
+        },
+        {
+          "name": "encodeContactHeaderEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Encode the SIP contact header sent by Telnyx to avoid issues for NAT or ALG scenarios",
+          "required": false
+        },
+        {
+          "name": "inboundGenerateRingbackTone",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Generate ringback tone through 183 session progress message with early media",
+          "required": false
+        },
+        {
+          "name": "outboundGenerateRingbackTone",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Generate ringback tone through 183 session progress message with early media",
+          "required": false
+        },
+        {
+          "name": "dtmfType",
+          "type": "Select",
+          "options": [
+            "RFC 2833",
+            "Inband",
+            "SIP INFO"
+          ],
+          "info": "Sets the type of DTMF digits sent from Telnyx to this Connection. Note that DTMF digits sent to Telnyx will be accepted in all formats.",
+          "required": false
+        },
+        {
+          "name": "outboundLocalization",
+          "type": "String",
+          "info": "A 2-character country code specifying the country whose national dialing rules should be used. For example, if set to `US` then any US number can be dialed without preprending +1 to the number. When left blank, Telnyx will try US and GB dialing rules, in that order, by default.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleConnection",
+      "description": "Gets a single connection based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateConnection",
+      "description": "update a single connection based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": true
+        },
+        {
+          "name": "connectionName",
+          "type": "String",
+          "info": "Name of the connection",
+          "required": false
+        },
+        {
+          "name": "active",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Defaults to true",
+          "required": false
+        },
+        {
+          "name": "dnisNumberFormat",
+          "type": "Select",
+          "options": [
+            "0",
+            "1",
+            "2"
+          ],
+          "info": "E.164 = 0, Strip-1 = 1, Strip-2 = 2",
+          "required": false
+        },
+        {
+          "name": "timeout1xx",
+          "type": "Number",
+          "info": "Time(sec) before aborting if connection is not made (min: 1, max: 20)",
+          "required": false
+        },
+        {
+          "name": "timeout2xx",
+          "type": "Number",
+          "info": "Time(sec) before aborting if call is unanswered (min: 1, max: 600)",
+          "required": false
+        },
+        {
+          "name": "aniOverrideType",
+          "type": "Select",
+          "options": [
+            "always",
+            "normal",
+            "emergency"
+          ],
+          "info": "Specifies when we apply your ani_override setting. Only applies when ani_override is not blank.",
+          "required": false
+        },
+        {
+          "name": "aniOverride",
+          "type": "String",
+          "info": "Set a phone number as the ani_override value to override caller id number on outbound calls",
+          "required": false
+        },
+        {
+          "name": "sipCompactHeadersEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Defaults to true",
+          "required": false
+        },
+        {
+          "name": "transportProtocol",
+          "type": "Select",
+          "options": [
+            "UDP",
+            "TLS",
+            "TCP"
+          ],
+          "info": "One of UDP, TLS, or TCP. Applies only to connections with IP authentication or FQDN authentication.",
+          "required": false
+        },
+        {
+          "name": "thirdPartyControlEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Applies to calls sent TO this connection.",
+          "required": false
+        },
+        {
+          "name": "privacyZoneEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "By default, Telnyx does not send caller-id information when the caller has chosen to hide this information. When this option is enabled, Telnyx will send the SIP header Privacy:id plus the caller-id information so that the receiver side can choose when to hide it.",
+          "required": false
+        },
+        {
+          "name": "codecs",
+          "type": "List",
+          "structure": {
+            "name": "codec",
+            "type": "String",
+            "info": "Single codec"
+          },
+          "info": "Defines the list of codecs that Telnyx will send for inbound calls to a specific number on your portal account, in priority order. This only works when the Connection the number is assigned to uses Media Handling mode: default. OPUS and H.264 codecs are available only when using TCP or TLS transport for SIP",
+          "required": false
+        },
+        {
+          "name": "prackEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Enable PRACK messages as defined in RFC3262",
+          "required": false
+        },
+        {
+          "name": "defaultRoutingMethod",
+          "type": "Select",
+          "options": [
+            "sequential",
+            "round-robin"
+          ],
+          "info": "Default routing method to be used when a number is associated with the connection.",
+          "required": false
+        },
+        {
+          "name": "defaultPrimaryAuthorizedIpId",
+          "type": "Number",
+          "info": "The default primary IP to use for the number. Only settable if the connection is of IP authentication type. Value must be the ID of an authorized IP set on the connection.",
+          "required": false
+        },
+        {
+          "name": "defaultSecondaryAuthorizedIpId",
+          "type": "Number",
+          "info": "The default secondary IP to use for the number. Only settable if the connection is of IP authentication type. Value must be the ID of an authorized IP set on the connection.",
+          "required": false
+        },
+        {
+          "name": "defaultTertiaryAuthorizedIpId",
+          "type": "Number",
+          "info": "The default tertiary IP to use for the number. Only settable if the connection is of IP authentication type. Value must be the ID of an authorized IP set on the connection.",
+          "required": false
+        },
+        {
+          "name": "anchorsiteOverride",
+          "type": "Select",
+          "options": [
+            "Latency",
+            "Chicago, IL",
+            "Ashburn, VA",
+            "San Jose, CA",
+            "London, UK",
+            "Toronto, Canada",
+            "Vancouver, Canada"
+          ],
+          "info": "\"Latency\" directs Telnyx to route media through the site with the lowest round-trip time to the user's connection. Telnyx calculates this time using ICMP ping messages. This can be disabled by specifying a site to handle all media.",
+          "required": false
+        },
+        {
+          "name": "encryptedMedia",
+          "type": "Select",
+          "options": [
+            "SRTP",
+            "ZRTP"
+          ],
+          "info": "Enable use of SRTP or ZRTP for encryption. Valid values are those listed or null. Cannot be set to non-null if the transport_portocol is TLS.",
+          "required": false
+        },
+        {
+          "name": "instantRingbackEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "When set, ringback will not wait for indication before sending ringback tone to calling party.",
+          "required": false
+        },
+        {
+          "name": "t38ReinviteSource",
+          "type": "Select",
+          "options": [
+            "telnyx",
+            "customer",
+            "disabled",
+            "passthru",
+            "caller-passthru",
+            "callee-passthru"
+          ],
+          "info": "This setting only affects connections with Fax-type Outbound Profiles. The setting dictates whether or not Telnyx sends a t.38 reinvite. By default, Telnyx will send the re-invite. If set to `customer`, the caller is expected to send the t.38 reinvite.",
+          "required": false
+        },
+        {
+          "name": "aniNumberFormat",
+          "type": "Select",
+          "options": [
+            "+E.164",
+            "E.164",
+            "+E.164-national",
+            "E.164-national"
+          ],
+          "info": "This setting allows you to set the format with which the caller's number (ANI) is sent for inbound phone calls.",
+          "required": false
+        },
+        {
+          "name": "isupHeadersEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "When set, inbound phone calls will receive ISUP parameters via SIP headers. (Only when available and only when using TCP or TLS transport.) Defaults to false.",
+          "required": false
+        },
+        {
+          "name": "encodeContactHeaderEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Encode the SIP contact header sent by Telnyx to avoid issues for NAT or ALG scenarios",
+          "required": false
+        },
+        {
+          "name": "inboundGenerateRingbackTone",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Generate ringback tone through 183 session progress message with early media",
+          "required": false
+        },
+        {
+          "name": "outboundGenerateRingbackTone",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Generate ringback tone through 183 session progress message with early media",
+          "required": false
+        },
+        {
+          "name": "dtmfType",
+          "type": "Select",
+          "options": [
+            "RFC 2833",
+            "Inband",
+            "SIP INFO"
+          ],
+          "info": "Sets the type of DTMF digits sent from Telnyx to this Connection. Note that DTMF digits sent to Telnyx will be accepted in all formats.",
+          "required": false
+        },
+        {
+          "name": "outboundLocalization",
+          "type": "String",
+          "info": "A 2-character country code specifying the country whose national dialing rules should be used. For example, if set to `US` then any US number can be dialed without preprending +1 to the number. When left blank, Telnyx will try US and GB dialing rules, in that order, by default.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteConnection",
+      "description": "Deletes a single connection based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createConnectionCredentials",
+      "description": "Sets the connection given by connectionId to use credentials-based authentication. This will remove any other authentication type set for the connection.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": true
+        },
+        {
+          "name": "connectionUsername",
+          "type": "String",
+          "info": "Username that will be sent when using the connection. Must be globally unique. Case-insensitive.",
+          "required": true
+        },
+        {
+          "name": "connectionPassword",
+          "type": "String",
+          "info": "Password that will be sent when using the connection. Must be at least 8 characters or more in length.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateConnectionCredentials",
+      "description": "Update the credentials used for authenticating the connection given",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": true
+        },
+        {
+          "name": "connectionUsername",
+          "type": "String",
+          "info": "Username that will be sent when using the connection. Must be globally unique. Case-insensitive.",
+          "required": true
+        },
+        {
+          "name": "connectionPassword",
+          "type": "String",
+          "info": "Password that will be sent when using the connection. Must be at least 8 characters or more in length.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getConnectionCredentialsSuggestion",
+      "description": "Get a suggestion for a username and password for use when creating a credentials authentication record for the connection given by connectionIds.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "setConnectionFQDNAuth",
+      "description": "Sets the connection given by connectionId to use FQDN-based authentication. This will remove any other authentication type set for the connection. Please note that domains themselves are not added through this endpoint.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": true
+        },
+        {
+          "name": "connectionUsername",
+          "type": "String",
+          "info": "Username that will be sent when using the connection. Must be globally unique. Case-insensitive.",
+          "required": true
+        },
+        {
+          "name": "connectionPassword",
+          "type": "String",
+          "info": "Password that will be sent when using the connection. Must be at least 8 characters or more in length.",
+          "required": true
+        },
+        {
+          "name": "ipAuthenticationMethod",
+          "type": "Select",
+          "options": [
+            "tech-prefix",
+            "token",
+            "p-charge-info"
+          ],
+          "info": "The method of authentication to use if this FQDN auth strategy uses IP-based outbound. Defaults to \"tech-prefix\". Has no effect if this auth strategy uses credentials for outbound authentication.",
+          "required": false
+        },
+        {
+          "name": "fqdnOutboundAuthentication",
+          "type": "Select",
+          "options": [
+            "credential-authentication",
+            "ip-authentication"
+          ],
+          "info": "The method of authentication to use for outbound calls on this authentication strategy. Defaults to \"credential-authentication\".",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateConnectionFQDNAuth",
+      "description": "Update the credentials used for authenticating the connection given",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": true
+        },
+        {
+          "name": "connectionUsername",
+          "type": "String",
+          "info": "Username that will be sent when using the connection. Must be globally unique. Case-insensitive.",
+          "required": true
+        },
+        {
+          "name": "connectionPassword",
+          "type": "String",
+          "info": "Password that will be sent when using the connection. Must be at least 8 characters or more in length.",
+          "required": true
+        },
+        {
+          "name": "ipAuthenticationMethod",
+          "type": "Select",
+          "options": [
+            "tech-prefix",
+            "token",
+            "p-charge-info"
+          ],
+          "info": "The method of authentication to use if this FQDN auth strategy uses IP-based outbound. Defaults to \"tech-prefix\". Has no effect if this auth strategy uses credentials for outbound authentication.",
+          "required": false
+        },
+        {
+          "name": "fqdnOutboundAuthentication",
+          "type": "Select",
+          "options": [
+            "credential-authentication",
+            "ip-authentication"
+          ],
+          "info": "The method of authentication to use for outbound calls on this authentication strategy. Defaults to \"credential-authentication\".",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listFQDNs",
+      "description": "Returns all FQDNs the user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createFQDN",
+      "description": "Creates a new FQDN.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": true
+        },
+        {
+          "name": "fqdn",
+          "type": "String",
+          "info": "Your FQDN",
+          "required": true
+        },
+        {
+          "name": "port",
+          "type": "Number",
+          "info": "Port number",
+          "required": false
+        },
+        {
+          "name": "dnsRecordType",
+          "type": "Select",
+          "options": [
+            "a",
+            "srv"
+          ],
+          "info": "the DNS record type for the FQDN. For cases where a port is not set, the DNS record type must be 'srv'. For cases where a port is set, the DNS record type must be 'a'. If the DNS record type is 'a' and a port is not specified, 5060 will be used.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateFQDN",
+      "description": "Updates a single FQDN based on the ID supplied",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "fqdnId",
+          "type": "String",
+          "info": "Id of the fqdn",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": false
+        },
+        {
+          "name": "fqdn",
+          "type": "String",
+          "info": "Your FQDN",
+          "required": false
+        },
+        {
+          "name": "port",
+          "type": "Number",
+          "info": "Port number",
+          "required": false
+        },
+        {
+          "name": "dnsRecordType",
+          "type": "Select",
+          "options": [
+            "a",
+            "srv"
+          ],
+          "info": "the DNS record type for the FQDN. For cases where a port is not set, the DNS record type must be 'srv'. For cases where a port is set, the DNS record type must be 'a'. If the DNS record type is 'a' and a port is not specified, 5060 will be used.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteFQDN",
+      "description": "Deletes a single FQDN based on the ID supplied",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "fqdnId",
+          "type": "String",
+          "info": "Id of the fqdn",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "setConnectionIpAuth",
+      "description": "Sets the connection given by connectionId to use IP-based authentication. This will remove any other authentication type set for the connection. Please note that authorized IP addresses are not added through this endpoint.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connectionl",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateConnectionIpAuthMethod",
+      "description": "Update the IP authentication strategy used for authenticating the given connection",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connectionl",
+          "required": true
+        },
+        {
+          "name": "ipAuthenticationMethod",
+          "type": "Select",
+          "options": [
+            "tech-prefix",
+            "token",
+            "p-charge-info"
+          ],
+          "info": "The method of IP authentication to use along with the connection. Defaults to tech-prefix. Can be tech-prefix, token or p-charge-info",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getConnectionIpAuthTokenSuggestion",
+      "description": "Gets a suggestion for a token to use with the IP authentication method token for the connection specified by connection_id. This is not 'binding' you can use a value other than one returned by this endpoint as a token. It is provided as a convenient way of getting a randomly generated token for a connection using that authentication method.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connectionl",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listAuthorizedIps",
+      "description": "Returns all Authorized IPs the user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createAuthorizedIp",
+      "description": "Creates a new Authorized IP.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": true
+        },
+        {
+          "name": "ipAddress",
+          "type": "String",
+          "info": "Valid IP address",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateAuthorizedIp",
+      "description": "Updates existing Authorized IP.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "authorizedIpId",
+          "type": "String",
+          "info": "Id of the authorized ip",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": false
+        },
+        {
+          "name": "ipAddress",
+          "type": "String",
+          "info": "Valid IP address",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteAuthorizedIp",
+      "description": "Deletes existing Authorized IP.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "authorizedIpId",
+          "type": "String",
+          "info": "Id of the authorized ip",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listE911Addresses",
+      "description": "Returns all E911 Addresses the user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createE911Address",
+      "description": "Creating an E911 Address requires the address fields to exactly match E911 Service records. All capital letters, and no punctuation is generally sufficient.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "firstName",
+          "type": "String",
+          "info": "Required if business name not given",
+          "required": false
+        },
+        {
+          "name": "lastName",
+          "type": "String",
+          "info": "Required if business name not given",
+          "required": false
+        },
+        {
+          "name": "businessName",
+          "type": "String",
+          "info": "Required if personal name not given",
+          "required": false
+        },
+        {
+          "name": "line1",
+          "type": "String",
+          "info": "Address first line",
+          "required": true
+        },
+        {
+          "name": "line2",
+          "type": "String",
+          "info": "Address second line",
+          "required": false
+        },
+        {
+          "name": "city",
+          "type": "String",
+          "info": "Address city",
+          "required": true
+        },
+        {
+          "name": "state",
+          "type": "String",
+          "info": "Address state",
+          "required": true
+        },
+        {
+          "name": "postalCode",
+          "type": "String",
+          "info": "Address postal code",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleE911Address",
+      "description": "Gets a single E911 Address based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "e911AddressId",
+          "type": "String",
+          "info": "Id of the e911 address",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateE911Address",
+      "description": "Updates a single E911 Address based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "e911AddressId",
+          "type": "String",
+          "info": "Id of the e911 address",
+          "required": true
+        },
+        {
+          "name": "firstName",
+          "type": "String",
+          "info": "Required if business name not given",
+          "required": false
+        },
+        {
+          "name": "lastName",
+          "type": "String",
+          "info": "Required if business name not given",
+          "required": false
+        },
+        {
+          "name": "businessName",
+          "type": "String",
+          "info": "Required if personal name not given",
+          "required": false
+        },
+        {
+          "name": "line1",
+          "type": "String",
+          "info": "Address first line",
+          "required": false
+        },
+        {
+          "name": "line2",
+          "type": "String",
+          "info": "Address second line",
+          "required": false
+        },
+        {
+          "name": "city",
+          "type": "String",
+          "info": "Address city",
+          "required": false
+        },
+        {
+          "name": "state",
+          "type": "String",
+          "info": "Address state",
+          "required": false
+        },
+        {
+          "name": "postalCode",
+          "type": "String",
+          "info": "Address postal code",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteE911Address",
+      "description": "Deletes a single E911 Address based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "e911AddressId",
+          "type": "String",
+          "info": "Id of the e911 address",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listNumbers",
+      "description": "Returns all numbers that the user has access to.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        },
+        {
+          "name": "filterTag",
+          "type": "String",
+          "info": "Optional filtering parameter. If present, only numbers that have been tagged 　with the string given will be returned. Returns exact matches only.",
+          "required": false
+        },
+        {
+          "name": "filterNumberVal",
+          "type": "String",
+          "info": "Optional filtering parameter. If present, only numbers that at least partially match the value given in their number will be returned. Requires at least three digits. Non-numerical characters should not be present in the filter and will result in no values being returned.",
+          "required": false
+        },
+        {
+          "name": "filterStatus",
+          "type": "Select",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "info": " Optional filtering parameter. If present, only numbers that have the same status as specified will be returned.",
+          "required": false
+        },
+        {
+          "name": "filterConnectionName",
+          "type": "String",
+          "info": "Optional filtering parameter. If present, only numbers that have a connection that at least partially matches the string given will be returned. Matching is not case-sensitive. Requires at least three characters. Numbers without a connection will not be returned.",
+          "required": false
+        },
+        {
+          "name": "filterUsagePaymentMethod",
+          "type": "Select",
+          "options": [
+            "pay-per-minute",
+            "channel"
+          ],
+          "info": "Optional filtering parameter. If present, only numbers that have the filterUsagePaymentMethod that at matches the string given will be returned. Matching is case-sensitive and only specified values are allowed.",
+          "required": false
+        },
+        {
+          "name": "orderBy",
+          "type": "Select",
+          "options": [
+            "order_date",
+            "phone_number",
+            "connection",
+            "usage_payment_method"
+          ],
+          "info": "Specify an ordering for the results.",
+          "required": false
+        },
+        {
+          "name": "sortDirection",
+          "type": "Select",
+          "options": [
+            "reverse"
+          ],
+          "info": "The sort_direction specifies in which way the ordering of the connections is applied.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleNumber",
+      "description": "Retrieve a single number - ID supplied can be the telephone number (ex: +12124567890) or object ID",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "number",
+          "type": "String",
+          "info": "Phone number or objectID",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateSingleNumber",
+      "description": "Updates a single number - ID supplied can be the telephone number (ex: +12124567890) or object ID",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "number",
+          "type": "String",
+          "info": "Phone number or objectID",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": false
+        },
+        {
+          "name": "primaryIp",
+          "type": "String",
+          "info": "Primary ip",
+          "required": false
+        },
+        {
+          "name": "secondaryIp",
+          "type": "String",
+          "info": "Secondary ip",
+          "required": false
+        },
+        {
+          "name": "tertiaryIp",
+          "type": "String",
+          "info": "Tertiary ip",
+          "required": false
+        },
+        {
+          "name": "primaryPort",
+          "type": "Number",
+          "info": "Primary ip port",
+          "required": false
+        },
+        {
+          "name": "secondaryPort",
+          "type": "Number",
+          "info": "Secondary ip port",
+          "required": false
+        },
+        {
+          "name": "tertiaryPort",
+          "type": "Number",
+          "info": "Tertiary ip port",
+          "required": false
+        },
+        {
+          "name": "primaryFqdn",
+          "type": "String",
+          "info": "The primary domain name for the number. Only relevant for numbers using a connection of FQDN-based authentication.",
+          "required": false
+        },
+        {
+          "name": "secondaryFqdn",
+          "type": "String",
+          "info": "The secondary domain name for the number. Only relevant for numbers using a connection of FQDN-based authentication.",
+          "required": false
+        },
+        {
+          "name": "tertiaryFqdn",
+          "type": "String",
+          "info": "The tertiary domain name for the number. Only relevant for numbers using a connection of FQDN-based authentication.",
+          "required": false
+        },
+        {
+          "name": "primaryFqdnPort",
+          "type": "Number",
+          "info": "Port for the primary FQDN",
+          "required": false
+        },
+        {
+          "name": "secondaryFqdnPort",
+          "type": "Number",
+          "info": "Port for the secondary FQDN",
+          "required": false
+        },
+        {
+          "name": "tertiaryFqdnPort",
+          "type": "Number",
+          "info": "Port for the tertiary FQDN",
+          "required": false
+        },
+        {
+          "name": "enableTechPrefix",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Whether tech prefix is enabled",
+          "required": false
+        },
+        {
+          "name": "translatedNumber",
+          "type": "String",
+          "info": "Translated number",
+          "required": false
+        },
+        {
+          "name": "forwardsTo",
+          "type": "String",
+          "info": "The number that this number should be forwarded to; when this is set, forwardingType must also be set",
+          "required": false
+        },
+        {
+          "name": "forwardingType",
+          "type": "Select",
+          "options": [
+            "always",
+            "on-failure"
+          ],
+          "info": "sets when this number should have its calls forwarded; valid values are 'always' and 'on-failure'",
+          "required": false
+        },
+        {
+          "name": "enableCallerIdName",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "If true, enables sending of CNAME information for incoming calls to the number",
+          "required": false
+        },
+        {
+          "name": "usagePaymentMethod",
+          "type": "Select",
+          "options": [
+            "pay-per-minute",
+            "channel"
+          ],
+          "info": "setting for whether a number is billed per minute or uses your concurrent channels. Can be pay-per-minute or channel",
+          "required": false
+        },
+        {
+          "name": "enableRtpAutoAdjust",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "When RTP Auto-Adjust is enabled, the destination RTP address port will be automatically changed to match the source of the incoming RTP packets.",
+          "required": false
+        },
+        {
+          "name": "mediaHandlingMode",
+          "type": "Select",
+          "options": [
+            "default",
+            "proxy",
+            "bypass"
+          ],
+          "info": "default: media routed through Telnyx with transcode support. proxy: media routed through Telnyx with no transcode support. bypass: media routed directly between origination and termination endpoints. Only Telnyx support may set a number to bypass mode.Can be default, proxy or bypass",
+          "required": false
+        },
+        {
+          "name": "routingMethod",
+          "type": "Select",
+          "options": [
+            "sequential",
+            "round-robin"
+          ],
+          "info": "The method for selecting the next connection IP address to use when dispatching calls for the number. This value has no effect for numbers that are not on a connection using IP authentication.Can be sequential or round-robin",
+          "required": false
+        },
+        {
+          "name": "cnamListingEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Enable CNAM listings for this number. Requires cnamListingDetails to also be filled in. Changes to this must be reviewed by Telnyx support and will not be active until this process is complete.",
+          "required": false
+        },
+        {
+          "name": "cnamListingDetails",
+          "type": "String",
+          "info": "The CNAM listing details for this number. Must be alphanumeric characters or spaces with a maximum length of 15. Requires cnamListingEnabled to also be set. Changes to this must be reviewed by Telnyx support and will not be active until this process is complete.",
+          "required": false
+        },
+        {
+          "name": "t38FaxGatewayEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "If true, fax gateway is enabled",
+          "required": false
+        },
+        {
+          "name": "acceptAnyRtpPacketsEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "If true, accepts any rtp packets",
+          "required": false
+        },
+        {
+          "name": "tagList",
+          "type": "List",
+          "structure": {
+            "name": "tag",
+            "type": "String",
+            "info": "Single tag"
+          },
+          "info": "Array of tags for this number",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateNumbers",
+      "description": "Update multiple numbers at once",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "numberIds",
+          "type": "List",
+          "structure": {
+            "name": "number",
+            "type": "String",
+            "info": "Single number"
+          },
+          "info": "Array of number ids and/or number values to update",
+          "required": true
+        },
+        {
+          "name": "connectionId",
+          "type": "String",
+          "info": "Id of the connection",
+          "required": false
+        },
+        {
+          "name": "primaryIp",
+          "type": "String",
+          "info": "Primary ip",
+          "required": false
+        },
+        {
+          "name": "secondaryIp",
+          "type": "String",
+          "info": "Secondary ip",
+          "required": false
+        },
+        {
+          "name": "tertiaryIp",
+          "type": "String",
+          "info": "Tertiary ip",
+          "required": false
+        },
+        {
+          "name": "primaryPort",
+          "type": "Number",
+          "info": "Primary ip port",
+          "required": false
+        },
+        {
+          "name": "secondaryPort",
+          "type": "Number",
+          "info": "Secondary ip port",
+          "required": false
+        },
+        {
+          "name": "tertiaryPort",
+          "type": "Number",
+          "info": "Tertiary ip port",
+          "required": false
+        },
+        {
+          "name": "e911Enabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "If true, enables e911",
+          "required": false
+        },
+        {
+          "name": "e911AddressId",
+          "type": "String",
+          "info": "Address id for 3911",
+          "required": false
+        },
+        {
+          "name": "addressId",
+          "type": "String",
+          "info": "Address id",
+          "required": false
+        },
+        {
+          "name": "enableTechPrefix",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Whether tech prefix is enabled",
+          "required": false
+        },
+        {
+          "name": "translatedNumber",
+          "type": "String",
+          "info": "Translated number",
+          "required": false
+        },
+        {
+          "name": "forwardsTo",
+          "type": "String",
+          "info": "The number that this number should be forwarded to; when this is set, forwardingType must also be set",
+          "required": false
+        },
+        {
+          "name": "forwardingType",
+          "type": "Select",
+          "options": [
+            "always",
+            "on-failure"
+          ],
+          "info": "sets when this number should have its calls forwarded; valid values are 'always' and 'on-failure'",
+          "required": false
+        },
+        {
+          "name": "usagePaymentMethod",
+          "type": "Select",
+          "options": [
+            "pay-per-minute",
+            "channel"
+          ],
+          "info": "setting for whether a number is billed per minute or uses your concurrent channels. Can be pay-per-minute or channel",
+          "required": false
+        },
+        {
+          "name": "enableRtpAutoAdjust",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "When RTP Auto-Adjust is enabled, the destination RTP address port will be automatically changed to match the source of the incoming RTP packets.",
+          "required": false
+        },
+        {
+          "name": "mediaHandlingMode",
+          "type": "Select",
+          "options": [
+            "default",
+            "proxy",
+            "bypass"
+          ],
+          "info": "default: media routed through Telnyx with transcode support. proxy: media routed through Telnyx with no transcode support. bypass: media routed directly between origination and termination endpoints. Only Telnyx support may set a number to bypass mode.Can be default, proxy or bypass",
+          "required": false
+        },
+        {
+          "name": "t38FaxGatewayEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "If true, fax gateway is enabled",
+          "required": false
+        },
+        {
+          "name": "acceptAnyRtpPacketsEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "If true, accepts any rtp packets",
+          "required": false
+        },
+        {
+          "name": "tagList",
+          "type": "List",
+          "structure": {
+            "name": "tag",
+            "type": "String",
+            "info": "Single tag"
+          },
+          "info": "Array of tags for this number",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "checkUpdateRequest",
+      "description": "Get status of mass numbers update",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "updateRequestId",
+          "type": "String",
+          "info": "Id of the mass numbers update request",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "enableE911OnNumber",
+      "description": "Enable E911 - ID supplied can be the telephone number (ex: +12124567890) or object ID",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "number",
+          "type": "String",
+          "info": "Phone number or objectID",
+          "required": true
+        },
+        {
+          "name": "e911Enabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "If true, enables e911",
+          "required": true
+        },
+        {
+          "name": "e911AddressId",
+          "type": "String",
+          "info": "Address id for 3911",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteNumber",
+      "description": "Deletes number - ID supplied can be the telephone number (ex: +12124567890) or object ID",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "number",
+          "type": "String",
+          "info": "Phone number or objectID",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getConcurrentChannelSettings",
+      "description": "Get your concurrent channel settings",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateConcurrentChannelSettings",
+      "description": "Update your concurrent channel settings",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "channels",
+          "type": "Number",
+          "info": "The new number of concurrent channels you want. You may check the cost per channel on the pricing page. Please note you may not set your channel count to 0 if you have any numbers using channel billing.",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createNumberOrder",
+      "description": "Creates a number order. All numbers included in the order should have appeared in a NumberSearch within 1 day ago.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "requestedNumbersWithMetadata",
+          "type": "List",
+          "structure": {
+            "name": "requestedNumberWithMetadata",
+            "type": "JSON",
+            "info": "JSON object with number and metadata"
+          },
+          "info": "Number with metadata",
+          "required": false
+        },
+        {
+          "name": "requestedInexplicitNumbers",
+          "type": "List",
+          "structure": {
+            "name": "requestedInexplicitNumber",
+            "type": "JSON",
+            "info": "JSON object with explicit number properties"
+          },
+          "info": "JSON object with explicit number properties",
+          "required": false
+        },
+        {
+          "name": "requestedNumbers",
+          "type": "List",
+          "structure": {
+            "name": "requestedNumber",
+            "type": "String",
+            "info": "Requested number"
+          },
+          "info": "Requested numbers",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createNumberSearch",
+      "description": "Creates number search",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "searchType",
+          "type": "Select",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "info": "NPA/NXX = 1, Region = 2, Tollfree = 3, Advanced = 4",
+          "required": true
+        },
+        {
+          "name": "searchDescriptor",
+          "type": "JSON",
+          "info": "JSOn object with search descriptor of proper type",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "Search limit",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getNumberSearch",
+      "description": "Get number search status",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "searchId",
+          "type": "String",
+          "info": "Id of the number search",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listOutboundProfiles",
+      "description": "Returns all Outbound Profiles the user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "whitelistedDestinationFormat",
+          "type": "Select",
+          "options": [
+            "alpha2",
+            "alpha3",
+            "iso_numberic"
+          ],
+          "info": "Format of your whitelisted destinations.",
+          "required": false
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createOutboundProfile",
+      "description": "Creates a new Outbound Profile.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionIds",
+          "type": "List",
+          "structure": {
+            "name": "connectionId",
+            "type": "String",
+            "info": "Single connection Id"
+          },
+          "info": "Connection IDs",
+          "required": true
+        },
+        {
+          "name": "trafficType",
+          "type": "Select",
+          "options": [
+            "1",
+            "3"
+          ],
+          "info": "Conversational = 1, Fax = 3",
+          "required": true
+        },
+        {
+          "name": "servicePlan",
+          "type": "Select",
+          "options": [
+            "1",
+            "2"
+          ],
+          "info": "US = 1, International = 2",
+          "required": true
+        },
+        {
+          "name": "active",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Defaults to true",
+          "required": false
+        },
+        {
+          "name": "translationRule",
+          "type": "String",
+          "info": "Only configure if advised by Telnyx support",
+          "required": false
+        },
+        {
+          "name": "cpsLimitIncrease",
+          "type": "Number",
+          "info": "Increase cps limit",
+          "required": false
+        },
+        {
+          "name": "ports",
+          "type": "Number",
+          "info": "Must be no more than your concurrent call limit. Null means no limit.",
+          "required": false
+        },
+        {
+          "name": "tagList",
+          "type": "List",
+          "structure": {
+            "name": "tag",
+            "type": "String",
+            "info": "Single tag"
+          },
+          "info": "List of tags",
+          "required": false
+        },
+        {
+          "name": "filterUsagePaymentMethod",
+          "type": "Select",
+          "options": [
+            "pay-per-minute",
+            "channel"
+          ],
+          "info": "Optional filtering parameter. If present, only numbers that have the filterUsagePaymentMethod that at matches the string given will be returned. Matching is case-sensitive and only specified values are allowed.",
+          "required": false
+        },
+        {
+          "name": "whitelistedDestinationFormat",
+          "type": "Select",
+          "options": [
+            "alpha2",
+            "alpha3",
+            "iso_numberic"
+          ],
+          "info": "Format of your whitelisted destinations.",
+          "required": false
+        },
+        {
+          "name": "whitelistedDestinations",
+          "type": "List",
+          "structure": {
+            "name": "whitelistedDestination",
+            "type": "String",
+            "info": "Single whitelisted Destination"
+          },
+          "info": "Whitelisted destinations",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getOutboundProfile",
+      "description": "Gets a single Outbound Profile based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "outboundProfileId",
+          "type": "String",
+          "info": "Id of the outbound profile",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateOutboundProfile",
+      "description": "Updates a single Outbound Profile based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "outboundProfileId",
+          "type": "String",
+          "info": "Id of the outbound profile",
+          "required": true
+        },
+        {
+          "name": "connectionIds",
+          "type": "List",
+          "structure": {
+            "name": "connectionId",
+            "type": "String",
+            "info": "Single connection Id"
+          },
+          "info": "Connection IDs",
+          "required": false
+        },
+        {
+          "name": "trafficType",
+          "type": "Select",
+          "options": [
+            "1",
+            "3"
+          ],
+          "info": "Conversational = 1, Fax = 3",
+          "required": false
+        },
+        {
+          "name": "servicePlan",
+          "type": "Select",
+          "options": [
+            "1",
+            "2"
+          ],
+          "info": "US = 1, International = 2",
+          "required": false
+        },
+        {
+          "name": "active",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Defaults to true",
+          "required": false
+        },
+        {
+          "name": "translationRule",
+          "type": "String",
+          "info": "Only configure if advised by Telnyx support",
+          "required": false
+        },
+        {
+          "name": "cpsLimitIncrease",
+          "type": "Number",
+          "info": "Increase cps limit",
+          "required": false
+        },
+        {
+          "name": "ports",
+          "type": "Number",
+          "info": "Must be no more than your concurrent call limit. Null means no limit.",
+          "required": false
+        },
+        {
+          "name": "tagList",
+          "type": "List",
+          "structure": {
+            "name": "tag",
+            "type": "String",
+            "info": "Single tag"
+          },
+          "info": "List of tags",
+          "required": false
+        },
+        {
+          "name": "filterUsagePaymentMethod",
+          "type": "Select",
+          "options": [
+            "pay-per-minute",
+            "channel"
+          ],
+          "info": "Optional filtering parameter. If present, only numbers that have the filterUsagePaymentMethod that at matches the string given will be returned. Matching is case-sensitive and only specified values are allowed.",
+          "required": false
+        },
+        {
+          "name": "whitelistedDestinationFormat",
+          "type": "Select",
+          "options": [
+            "alpha2",
+            "alpha3",
+            "iso_numberic"
+          ],
+          "info": "Format of your whitelisted destinations.",
+          "required": false
+        },
+        {
+          "name": "whitelistedDestinations",
+          "type": "List",
+          "structure": {
+            "name": "whitelistedDestination",
+            "type": "String",
+            "info": "Single whitelisted Destination"
+          },
+          "info": "Whitelisted destinations",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteOutboundProfile",
+      "description": "Deletes a single Outbound Profile based on the ID supplied.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "outboundProfileId",
+          "type": "String",
+          "info": "Id of the outbound profile",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "checkPhoneNumberPortability",
+      "description": "Check a list of numbers to see if they're portable.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "phoneNumbers",
+          "type": "List",
+          "structure": {
+            "name": "phoneNumber",
+            "type": "String",
+            "info": "Single phone number"
+          },
+          "info": "Phone numbers to check",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listPortRequests",
+      "description": "Returns all port requests that your user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        },
+        {
+          "name": "search",
+          "type": "String",
+          "info": "Filter results by supportkey (pr*) or partial phone number",
+          "required": false
+        },
+        {
+          "name": "status",
+          "type": "Select",
+          "options": [
+            "incomplete",
+            "complete"
+          ],
+          "info": "Filter results by status",
+          "required": false
+        },
+        {
+          "name": "includePhoneNumbers",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Include phone number objects in the results",
+          "required": false
+        },
+        {
+          "name": "includeSubRequests",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Include sub request objects in the results",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSinglePortRequest",
+      "description": "Returns a single port request based on the id supplied",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "portRequestId",
+          "type": "String",
+          "info": "Id of the port request",
+          "required": true
+        },
+        {
+          "name": "includePhoneNumbers",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Include phone number objects in the results",
+          "required": false
+        },
+        {
+          "name": "includeSubRequests",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Include sub request objects in the results",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSubrequestsForPortRequest",
+      "description": "Get the sub requests for a given port request",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "portRequestId",
+          "type": "String",
+          "info": "Id of the port request",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleSubrequest",
+      "description": "Get a sub request belonging to the given port request id",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "portRequestId",
+          "type": "String",
+          "info": "Id of the port request",
+          "required": true
+        },
+        {
+          "name": "subrequestId",
+          "type": "String",
+          "info": "Id of the port subrequest",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getPortRequestComments",
+      "description": "Get the comments for a given port request",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "portRequestId",
+          "type": "String",
+          "info": "Id of the port request",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "addCommentToPortRequest",
+      "description": "Add comment to a given port request",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "portRequestId",
+          "type": "String",
+          "info": "Id of the port request",
+          "required": true
+        },
+        {
+          "name": "comment",
+          "type": "String",
+          "info": "Body of the comment",
+          "required": true
+        },
+        {
+          "name": "subrequestId",
+          "type": "String",
+          "info": "Id of the subrequest",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listSupportingDocumentsForPortRequest",
+      "description": "List supporting documents for the given port request",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "portRequestId",
+          "type": "String",
+          "info": "Id of the port request",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleSupportingDocument",
+      "description": "Get a supporting document belonging to the given port request id.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "portRequestId",
+          "type": "String",
+          "info": "Id of the port request",
+          "required": true
+        },
+        {
+          "name": "supportingDocumentId",
+          "type": "String",
+          "info": "Id of the supporting document",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLinkToSupportingDocument",
+      "description": "Create link to allows downloading this document. Expires in 1 hour.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "portRequestId",
+          "type": "String",
+          "info": "Id of the port request",
+          "required": true
+        },
+        {
+          "name": "supportingDocumentId",
+          "type": "String",
+          "info": "Id of the supporting document",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listDraftPortRequests",
+      "description": "Returns all draft port requests that your user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        },
+        {
+          "name": "search",
+          "type": "String",
+          "info": "Filter results by supportkey (pr*) or partial phone number",
+          "required": false
+        },
+        {
+          "name": "status",
+          "type": "Select",
+          "options": [
+            "incomplete",
+            "complete"
+          ],
+          "info": "Filter results by status",
+          "required": false
+        },
+        {
+          "name": "includePhoneNumbers",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Include phone number objects in the results",
+          "required": false
+        },
+        {
+          "name": "includeSubRequests",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Include sub request objects in the results",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createDraftPortRequest",
+      "description": "Creates a new draft port request",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "phoneNumbers",
+          "type": "List",
+          "structure": {
+            "name": "phoneNumber",
+            "type": "String",
+            "info": "Single phone number"
+          },
+          "info": "List of phone numbers to port",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleDraftPortRequest",
+      "description": "Returns a single draft port request based on the id supplied",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "draftPortRequestId",
+          "type": "String",
+          "info": "Id of the draft port request",
+          "required": true
+        },
+        {
+          "name": "includePhoneNumbers",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Include phone number objects in the results",
+          "required": false
+        },
+        {
+          "name": "includeSubRequests",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Include sub request objects in the results",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "submitDraftPortRequest",
+      "description": "Once all of the sub requests belonging to a draft port request are populated with required information the draft port request can be submitted, initiating the porting process. Once successfully submitted changes can no longer be made to the draft port request.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "draftPortRequestId",
+          "type": "String",
+          "info": "Id of the draft port request",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSubrequestsForDraftPortRequest",
+      "description": "Get the sub requests for a given draft port request",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "draftPortRequestId",
+          "type": "String",
+          "info": "Id of the draft port request",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleDraftPortSubrequest",
+      "description": "Get a sub request belonging to the given draft port request id",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "draftPortRequestId",
+          "type": "String",
+          "info": "Id of the draft port request",
+          "required": true
+        },
+        {
+          "name": "subrequestId",
+          "type": "String",
+          "info": "Id of the port subrequest",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "updateSingleDraftPortSubrequest",
+      "description": "Update a sub request belonging to the given draft port request id",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "draftPortRequestId",
+          "type": "String",
+          "info": "Id of the draft port request",
+          "required": true
+        },
+        {
+          "name": "subrequestId",
+          "type": "String",
+          "info": "Id of the port subrequest",
+          "required": true
+        },
+        {
+          "name": "focDateRequestedByUser",
+          "type": "DatePicker",
+          "info": "Date/Time requested for the FOC date",
+          "required": true
+        },
+        {
+          "name": "personOrCompanyName",
+          "type": "String",
+          "info": "Person Name or Company name requesting the port",
+          "required": false
+        },
+        {
+          "name": "authPersonName",
+          "type": "String",
+          "info": "Name of person authorizing the port request",
+          "required": true
+        },
+        {
+          "name": "billingPhoneNumber",
+          "type": "String",
+          "info": "Billing phone number associated with these phone numbers",
+          "required": true
+        },
+        {
+          "name": "streetAddress",
+          "type": "String",
+          "info": "First line of billing address",
+          "required": true
+        },
+        {
+          "name": "extendedAddress",
+          "type": "String",
+          "info": "Second line of billing address",
+          "required": false
+        },
+        {
+          "name": "locality",
+          "type": "String",
+          "info": "City of billing address",
+          "required": true
+        },
+        {
+          "name": "administrativeArea",
+          "type": "String",
+          "info": "Two character state abbreviation of billing address",
+          "required": true
+        },
+        {
+          "name": "postalCode",
+          "type": "String",
+          "info": "Postal Code of billing address",
+          "required": true
+        },
+        {
+          "name": "countryCode",
+          "type": "String",
+          "info": "ISO3166-1 alpha-2 country code of billing address",
+          "required": true
+        },
+        {
+          "name": "defaultConnectionId",
+          "type": "String",
+          "info": "ID of connection to set on the numbers when ported",
+          "required": true
+        },
+        {
+          "name": "portingOptionType",
+          "type": "Select",
+          "options": [
+            "full",
+            "partial"
+          ],
+          "info": "A port can be either 'full' or 'partial'. When type is 'full' the other attributes should be ommitted.",
+          "required": false
+        },
+        {
+          "name": "remainingNumbersAction",
+          "type": "Select",
+          "options": [
+            "keep",
+            "disconnect"
+          ],
+          "info": "Remaining numbers can be either kept with their current service provider or disconnected. 'newBillingPhoneNumber' is required when 'remainingNumbersAction' is 'keep'.",
+          "required": false
+        },
+        {
+          "name": "newBillingPhoneNumber",
+          "type": "String",
+          "info": "New billing telephone numbers for the remaining numbers. This will be set on your account with your current service provider and should be one of the numbers remaining on that account.",
+          "required": false
+        },
+        {
+          "name": "pinPasscode",
+          "type": "String",
+          "info": "PIN/passcode for accounts that have wireless type numbers",
+          "required": false
+        },
+        {
+          "name": "accountNumber",
+          "type": "String",
+          "info": "The authorized person's account number with the current service provider",
+          "required": false
+        },
+        {
+          "name": "taxIdentifier",
+          "type": "String",
+          "info": "European tax identification number. Applicable only in the European Union",
+          "required": false
+        },
+        {
+          "name": "businessIdentifier",
+          "type": "String",
+          "info": "European business identification number. Applicable only in the European Union",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleDraftPortSubrequestAllowedDates",
+      "description": "Get the allowed FOC dates for a draft sub request",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "draftPortRequestId",
+          "type": "String",
+          "info": "Id of the draft port request",
+          "required": true
+        },
+        {
+          "name": "subrequestId",
+          "type": "String",
+          "info": "Id of the port subrequest",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listSupportingDocumentsForDraftPortRequest",
+      "description": "List supporting documents for the given draft port request",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "draftPortRequestId",
+          "type": "String",
+          "info": "Id of the draft port request",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getSingleSupportingDocumentForDraftRequest",
+      "description": "Get a supporting document belonging to the given draft port request id.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "draftPortRequestId",
+          "type": "String",
+          "info": "Id of the draft port request",
+          "required": true
+        },
+        {
+          "name": "supportingDocumentId",
+          "type": "String",
+          "info": "Id of the supporting document",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getLinkToSupportingDocumentForDraftRequest",
+      "description": "Create download link for document this document. Expires in 1 hour.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "draftPortRequestId",
+          "type": "String",
+          "info": "Id of the draft port request",
+          "required": true
+        },
+        {
+          "name": "supportingDocumentId",
+          "type": "String",
+          "info": "Id of the supporting document",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listCdrRequests",
+      "description": "Returns all cdr_requests that the user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createCdrRequest",
+      "description": "Create a new cdr_request",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "startTime",
+          "type": "DatePicker",
+          "info": "Report start time",
+          "required": true
+        },
+        {
+          "name": "endTime",
+          "type": "DatePicker",
+          "info": "Report end time.  Must be less than 24 hours from now",
+          "required": false
+        },
+        {
+          "name": "callTypes",
+          "type": "List",
+          "structure": {
+            "name": "callType",
+            "type": "Select",
+            "options": [
+              "1",
+              "2"
+            ],
+            "info": "Single call type"
+          },
+          "info": "Inbound = 1, Outbound = 2",
+          "required": false
+        },
+        {
+          "name": "recordTypes",
+          "type": "List",
+          "structure": {
+            "name": "callType",
+            "type": "Select",
+            "options": [
+              "1",
+              "2",
+              "3"
+            ],
+            "info": "Single record type"
+          },
+          "info": "Complete = 1, Incomplete = 2, Errors = 3",
+          "required": false
+        },
+        {
+          "name": "connections",
+          "type": "List",
+          "structure": {
+            "name": "connection",
+            "type": "String",
+            "info": "Single connection id"
+          },
+          "info": "Array of connection IDs",
+          "required": false
+        },
+        {
+          "name": "reportName",
+          "type": "String",
+          "info": "Name of the report",
+          "required": false
+        },
+        {
+          "name": "filters",
+          "type": "List",
+          "structure": {
+            "name": "filter",
+            "type": "JSON",
+            "info": "JSON filter object"
+          },
+          "info": "The 'filters' field specifies a list of query criteria",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getCdrRequestStatus",
+      "description": "Get the status of a CDR request. Response includes a link to the report once it is generated.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "cdrRequestId",
+          "type": "String",
+          "info": "Id of the cdr request",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteCdrRequest",
+      "description": "Deletes a CDR request.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "cdrRequestId",
+          "type": "String",
+          "info": "Id of the cdr request",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listMdrRequests",
+      "description": "Returns all mdr_requests that the user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createMdrRequest",
+      "description": "Create a new mdr_request",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "startTime",
+          "type": "DatePicker",
+          "info": "Report start time",
+          "required": true
+        },
+        {
+          "name": "endTime",
+          "type": "DatePicker",
+          "info": "Report end time.  Must be less than 24 hours from now",
+          "required": true
+        },
+        {
+          "name": "callTypes",
+          "type": "List",
+          "structure": {
+            "name": "callType",
+            "type": "Select",
+            "options": [
+              "1",
+              "2"
+            ],
+            "info": "Single call type"
+          },
+          "info": "Inbound = 1, Outbound = 2",
+          "required": false
+        },
+        {
+          "name": "recordTypes",
+          "type": "List",
+          "structure": {
+            "name": "callType",
+            "type": "Select",
+            "options": [
+              "1",
+              "2",
+              "3"
+            ],
+            "info": "Single record type"
+          },
+          "info": "Complete = 1, Incomplete = 2, Errors = 3",
+          "required": false
+        },
+        {
+          "name": "connections",
+          "type": "List",
+          "structure": {
+            "name": "connection",
+            "type": "String",
+            "info": "Single connection id"
+          },
+          "info": "Array of connection IDs",
+          "required": false
+        },
+        {
+          "name": "reportName",
+          "type": "String",
+          "info": "Name of the report",
+          "required": false
+        },
+        {
+          "name": "filters",
+          "type": "List",
+          "structure": {
+            "name": "filter",
+            "type": "JSON",
+            "info": "JSON filter object"
+          },
+          "info": "The 'filters' field specifies a list of query criteria",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMdrRequestStatus",
+      "description": "Get the status of a MDR request. Response includes a link to the report once it is generated.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "mdrRequestId",
+          "type": "String",
+          "info": "Id of the mdr request",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteMdrRequest",
+      "description": "Deletes a MDR request.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "mdrRequestId",
+          "type": "String",
+          "info": "Id of the mdr request",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listMdrUsageReports",
+      "description": "Returns all MDR usage reports that the user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createMdrUsageReport",
+      "description": "Create a new mdr usage report",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "startTime",
+          "type": "DatePicker",
+          "info": "Report start time",
+          "required": true
+        },
+        {
+          "name": "endTime",
+          "type": "DatePicker",
+          "info": "Report end time.  Must be less than 24 hours from now",
+          "required": false
+        },
+        {
+          "name": "aggregationType",
+          "type": "Select",
+          "options": [
+            "0",
+            "1"
+          ],
+          "info": "Aggregate: All = 0, By Connection = 1",
+          "required": false
+        },
+        {
+          "name": "connections",
+          "type": "List",
+          "structure": {
+            "name": "connection",
+            "type": "String",
+            "info": "Single connection id"
+          },
+          "info": "Array of connection IDs",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getMdrUsageReportStatus",
+      "description": "Get the status of MDR usage report. Response includes a link to the report once it is generated.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "mdrUsageReportId",
+          "type": "String",
+          "info": "Id of the mdr usage report",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteMdrUsageReport",
+      "description": "Delete MDR usage report.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "mdrUsageReportId",
+          "type": "String",
+          "info": "Id of the mdr usage report",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "listUsageReports",
+      "description": "Returns all usage reports that the user has access to",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "page",
+          "type": "Number",
+          "info": "Page number of results to load",
+          "required": false
+        },
+        {
+          "name": "perPage",
+          "type": "Number",
+          "info": "Number of results per page",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createUsageReport",
+      "description": "Create a new usage report",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "startTime",
+          "type": "DatePicker",
+          "info": "Report start time",
+          "required": true
+        },
+        {
+          "name": "endTime",
+          "type": "DatePicker",
+          "info": "Report end time.  Must be less than 24 hours from now",
+          "required": false
+        },
+        {
+          "name": "aggregationType",
+          "type": "Select",
+          "options": [
+            "0",
+            "1"
+          ],
+          "info": "Aggregate: All = 0, By Connection = 1",
+          "required": false
+        },
+        {
+          "name": "connections",
+          "type": "List",
+          "structure": {
+            "name": "connection",
+            "type": "String",
+            "info": "Single connection id"
+          },
+          "info": "Array of connection IDs",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getUsageReportStatus",
+      "description": "Get the status of usage report. Response includes a link to the report once it is generated.",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "usageReportId",
+          "type": "String",
+          "info": "Id of the usage report",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteUsageReport",
+      "description": "Delete the usage report. ",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "usageReportId",
+          "type": "String",
+          "info": "Id of the usage report",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
