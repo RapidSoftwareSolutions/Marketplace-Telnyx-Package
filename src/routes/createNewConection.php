@@ -1,5 +1,5 @@
 <?php
-$app->post('/api/Telnyx/createConnection', function ($request, $response, $args) {
+$app->post('/api/Telnyx/createNewConection', function ($request, $response, $args) {
     $settings = $this->settings;
 
     //checking properly formed json

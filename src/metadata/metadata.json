@@ -1319,6 +1319,298 @@
       ]
     },
     {
+      "name": "createNewConection",
+      "description": "Create new connection",
+      "args": [
+        {
+          "name": "apiToken",
+          "type": "credentials",
+          "info": "Api token received from Telnyx",
+          "required": true
+        },
+        {
+          "name": "username",
+          "type": "credentials",
+          "info": "Your Telnyx username (email)",
+          "required": true
+        },
+        {
+          "name": "connectionName",
+          "type": "String",
+          "info": "Name of the connection",
+          "required": true
+        },
+        {
+          "name": "active",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Defaults to true",
+          "required": false
+        },
+        {
+          "name": "dnisNumberFormat",
+          "type": "Select",
+          "options": [
+            "0",
+            "1",
+            "2"
+          ],
+          "info": "E.164 = 0, Strip-1 = 1, Strip-2 = 2",
+          "required": false
+        },
+        {
+          "name": "timeout1xx",
+          "type": "Number",
+          "info": "Time(sec) before aborting if connection is not made (min: 1, max: 20)",
+          "required": false
+        },
+        {
+          "name": "timeout2xx",
+          "type": "Number",
+          "info": "Time(sec) before aborting if call is unanswered (min: 1, max: 600)",
+          "required": false
+        },
+        {
+          "name": "aniOverrideType",
+          "type": "Select",
+          "options": [
+            "always",
+            "normal",
+            "emergency"
+          ],
+          "info": "Specifies when we apply your ani_override setting. Only applies when ani_override is not blank.",
+          "required": false
+        },
+        {
+          "name": "aniOverride",
+          "type": "String",
+          "info": "Set a phone number as the ani_override value to override caller id number on outbound calls",
+          "required": false
+        },
+        {
+          "name": "sipCompactHeadersEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Defaults to true",
+          "required": false
+        },
+        {
+          "name": "transportProtocol",
+          "type": "Select",
+          "options": [
+            "UDP",
+            "TLS",
+            "TCP"
+          ],
+          "info": "One of UDP, TLS, or TCP. Applies only to connections with IP authentication or FQDN authentication.",
+          "required": false
+        },
+        {
+          "name": "thirdPartyControlEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Applies to calls sent TO this connection.",
+          "required": false
+        },
+        {
+          "name": "privacyZoneEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "By default, Telnyx does not send caller-id information when the caller has chosen to hide this information. When this option is enabled, Telnyx will send the SIP header Privacy:id plus the caller-id information so that the receiver side can choose when to hide it.",
+          "required": false
+        },
+        {
+          "name": "codecs",
+          "type": "List",
+          "structure": {
+            "name": "codec",
+            "type": "String",
+            "info": "Single codec"
+          },
+          "info": "Defines the list of codecs that Telnyx will send for inbound calls to a specific number on your portal account, in priority order. This only works when the Connection the number is assigned to uses Media Handling mode: default. OPUS and H.264 codecs are available only when using TCP or TLS transport for SIP",
+          "required": false
+        },
+        {
+          "name": "prackEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Enable PRACK messages as defined in RFC3262",
+          "required": false
+        },
+        {
+          "name": "defaultRoutingMethod",
+          "type": "Select",
+          "options": [
+            "sequential",
+            "round-robin"
+          ],
+          "info": "Default routing method to be used when a number is associated with the connection.",
+          "required": false
+        },
+        {
+          "name": "defaultPrimaryAuthorizedIpId",
+          "type": "Number",
+          "info": "The default primary IP to use for the number. Only settable if the connection is of IP authentication type. Value must be the ID of an authorized IP set on the connection.",
+          "required": false
+        },
+        {
+          "name": "defaultSecondaryAuthorizedIpId",
+          "type": "Number",
+          "info": "The default secondary IP to use for the number. Only settable if the connection is of IP authentication type. Value must be the ID of an authorized IP set on the connection.",
+          "required": false
+        },
+        {
+          "name": "defaultTertiaryAuthorizedIpId",
+          "type": "Number",
+          "info": "The default tertiary IP to use for the number. Only settable if the connection is of IP authentication type. Value must be the ID of an authorized IP set on the connection.",
+          "required": false
+        },
+        {
+          "name": "anchorsiteOverride",
+          "type": "Select",
+          "options": [
+            "Latency",
+            "Chicago, IL",
+            "Ashburn, VA",
+            "San Jose, CA",
+            "London, UK",
+            "Toronto, Canada",
+            "Vancouver, Canada"
+          ],
+          "info": "\"Latency\" directs Telnyx to route media through the site with the lowest round-trip time to the user's connection. Telnyx calculates this time using ICMP ping messages. This can be disabled by specifying a site to handle all media.",
+          "required": false
+        },
+        {
+          "name": "encryptedMedia",
+          "type": "Select",
+          "options": [
+            "SRTP",
+            "ZRTP"
+          ],
+          "info": "Enable use of SRTP or ZRTP for encryption. Valid values are those listed or null. Cannot be set to non-null if the transport_portocol is TLS.",
+          "required": false
+        },
+        {
+          "name": "instantRingbackEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "When set, ringback will not wait for indication before sending ringback tone to calling party.",
+          "required": false
+        },
+        {
+          "name": "t38ReinviteSource",
+          "type": "Select",
+          "options": [
+            "telnyx",
+            "customer",
+            "disabled",
+            "passthru",
+            "caller-passthru",
+            "callee-passthru"
+          ],
+          "info": "This setting only affects connections with Fax-type Outbound Profiles. The setting dictates whether or not Telnyx sends a t.38 reinvite. By default, Telnyx will send the re-invite. If set to `customer`, the caller is expected to send the t.38 reinvite.",
+          "required": false
+        },
+        {
+          "name": "aniNumberFormat",
+          "type": "Select",
+          "options": [
+            "+E.164",
+            "E.164",
+            "+E.164-national",
+            "E.164-national"
+          ],
+          "info": "This setting allows you to set the format with which the caller's number (ANI) is sent for inbound phone calls.",
+          "required": false
+        },
+        {
+          "name": "isupHeadersEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "When set, inbound phone calls will receive ISUP parameters via SIP headers. (Only when available and only when using TCP or TLS transport.) Defaults to false.",
+          "required": false
+        },
+        {
+          "name": "encodeContactHeaderEnabled",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Encode the SIP contact header sent by Telnyx to avoid issues for NAT or ALG scenarios",
+          "required": false
+        },
+        {
+          "name": "inboundGenerateRingbackTone",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Generate ringback tone through 183 session progress message with early media",
+          "required": false
+        },
+        {
+          "name": "outboundGenerateRingbackTone",
+          "type": "Select",
+          "options": [
+            "true",
+            "false"
+          ],
+          "info": "Generate ringback tone through 183 session progress message with early media",
+          "required": false
+        },
+        {
+          "name": "dtmfType",
+          "type": "Select",
+          "options": [
+            "RFC 2833",
+            "Inband",
+            "SIP INFO"
+          ],
+          "info": "Sets the type of DTMF digits sent from Telnyx to this Connection. Note that DTMF digits sent to Telnyx will be accepted in all formats.",
+          "required": false
+        },
+        {
+          "name": "outboundLocalization",
+          "type": "String",
+          "info": "A 2-character country code specifying the country whose national dialing rules should be used. For example, if set to `US` then any US number can be dialed without preprending +1 to the number. When left blank, Telnyx will try US and GB dialing rules, in that order, by default.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
       "name": "getSingleConnection",
       "description": "Gets a single connection based on the ID supplied.",
       "args": [

@@ -1,5 +1,6 @@
        <?php
        $routes = [
+       'createNewConection',
        'deleteUsageReport',
        'getUsageReportStatus',
        'createUsageReport',
