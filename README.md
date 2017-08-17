@@ -12,6 +12,26 @@ Telnyx is a VoIP telecom service provider, providing a cloud-based platform that
 4. Go to [Connections](https://portal.telnyx.com/#/app/connections) and create new one
 5. Go to [Telco data](https://portal.telnyx.com/#/app/telephone-data) and add created token to created connection
 
+## Webhook credentials
+ 
+ You can use our service as webhookUrl: 
+    ```
+    https://webhooks.rapidapi.io/api/message/Telnyx/webhookEvent/{projectName}/{projectKey} * see credentials description below
+    ```
+You can add a webhook link at the [Dashboard Notifications](https://www.kite.ly/settings/notifications)
+ 
+Please use SDK to test this feature.
+ 
+ 0. Go to [RapidAPI](http://rapidapi.io)
+ 1. Log in or create an account
+ 2. Go to [My apps](https://dashboard.rapidapi.io/projects)
+ 3. Add new project with projectName to get your project Key
+ 
+ | Field      | Type       | Description
+ |------------|------------|----------
+ | projectName     | credentials| Your RapidAPI project name
+ | projectKey | credentials     | Your RapidAPI project key
+
 
 ## Custom datatypes: 
  |Datatype|Description|Example
@@ -64,8 +84,8 @@ Use this endpoint to create a new messaging profile, required for SMS-capable nu
 | username    | credentials| Your Telnyx username (email)
 | connectionId| String     | Id of the connection
 | name        | String     | Name of the profile
-| url         | String     | Url of the profile
-| failoverUrl | String     | Failover url of the profile
+| url         | String     | Url of the webhook. You can use our service as webhookUrl. https://webhooks.rapidapi.io/api/message/Telnyx/webhookEvent/{projectName}/{projectKey}. See details above
+| failoverUrl | String     | Failover url of the webhook. You can use our service as webhookUrl. https://webhooks.rapidapi.io/api/message/Telnyx/webhookEvent/{projectName}/{projectKey}. See details above
 | method      | String     | Method of the profile
 
 ## Telnyx.getSingleMessagingProfile
@@ -87,8 +107,8 @@ Use this endpoint to update a messaging profile associated with your Telnyx acco
 | profileId   | String     | Id of the profile
 | connectionId| String     | Id of the connection
 | name        | String     | Name of the profile
-| url         | String     | Url of the profile
-| failoverUrl | String     | Failover url of the profile
+| url         | String     | Url of the webhook. You can use our service as webhookUrl. https://webhooks.rapidapi.io/api/message/Telnyx/webhookEvent/{projectName}/{projectKey}. See details above
+| failoverUrl | String     | Failover url of the webhook. You can use our service as webhookUrl. https://webhooks.rapidapi.io/api/message/Telnyx/webhookEvent/{projectName}/{projectKey}. See details above
 | method      | String     | Method of the profile
 
 ## Telnyx.generateMessagingProfileSecret

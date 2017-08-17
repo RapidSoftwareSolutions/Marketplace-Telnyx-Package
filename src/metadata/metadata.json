@@ -19,6 +19,31 @@
       "apiToken"
     ]
   },
+  "events": [
+    {
+      "name": "webhookEvent",
+      "description": "This method is called every time a Strava webhook event occurs",
+      "payload": {
+        "subscription_id": "1",
+        "owner_id": 13408,
+        "object_id": 12312312312,
+        "object_type": "activity",
+        "aspect_type": "create",
+        "event_time": 1297286541
+      },
+      "steps": [
+        "You can add a webhook using addWebhook block"
+      ],
+      "args": [
+        {
+          "name": "token",
+          "type": "string",
+          "info": "Token sent on each message",
+          "required": true
+        }
+      ]
+    }
+  ],
   "blocks": [
     {
       "name": "getCallerInformation",
@@ -163,13 +188,13 @@
         {
           "name": "url",
           "type": "String",
-          "info": "Url of the profile",
+          "info": "Url of the webhook. You can use our service as webhookUrl. https://webhooks.rapidapi.io/api/message/Telnyx/webhookEvent/{projectName}/{projectKey}. See details above",
           "required": false
         },
         {
           "name": "failoverUrl",
           "type": "String",
-          "info": "Failover url of the profile",
+          "info": "Failover url of the webhook. You can use our service as webhookUrl. https://webhooks.rapidapi.io/api/message/Telnyx/webhookEvent/{projectName}/{projectKey}. See details above",
           "required": false
         },
         {
@@ -261,13 +286,13 @@
         {
           "name": "url",
           "type": "String",
-          "info": "Url of the profile",
+          "info": "Url of the webhook. You can use our service as webhookUrl. https://webhooks.rapidapi.io/api/message/Telnyx/webhookEvent/{projectName}/{projectKey}. See details above",
           "required": false
         },
         {
           "name": "failoverUrl",
           "type": "String",
-          "info": "Failover url of the profile",
+          "info": "Failover url of the webhook. You can use our service as webhookUrl. https://webhooks.rapidapi.io/api/message/Telnyx/webhookEvent/{projectName}/{projectKey}. See details above",
           "required": false
         },
         {

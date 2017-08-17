@@ -1,5 +1,6 @@
        <?php
        $routes = [
+       'webhookEvent',
        'createNewConection',
        'deleteUsageReport',
        'getUsageReportStatus',
