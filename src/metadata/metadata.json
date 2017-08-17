@@ -22,17 +22,12 @@
   "events": [
     {
       "name": "webhookEvent",
-      "description": "This method is called every time a Strava webhook event occurs",
+      "description": "This method is called every time a Telnyx webhook event occurs",
       "payload": {
-        "subscription_id": "1",
-        "owner_id": 13408,
-        "object_id": 12312312312,
-        "object_type": "activity",
-        "aspect_type": "create",
-        "event_time": 1297286541
+        "key": "value"
       },
       "steps": [
-        "You can add a webhook using addWebhook block"
+        "You can add a webhook using by inserting url to proper fields"
       ],
       "args": [
         {
