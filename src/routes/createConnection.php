@@ -9,6 +9,7 @@ $app->post('/api/Telnyx/createConnection', function ($request, $response, $args)
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
     } else {
         $post_data = $validateRes;
+        
     }
     //forming request to vendor API
 
