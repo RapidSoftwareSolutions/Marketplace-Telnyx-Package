@@ -254,7 +254,7 @@ Returns all Connections the user has access to
 | filterIpAddress     | String     |  Optional filtering parameter. If present, only connections with one or more matching authorized IP addresses will be returned.
 | filterAuthUserName  | String     | Optional filtering parameter. If present, only connections of credential-based authentication will be returned, and only those with a user_name that is at least a partial match with the value provided. Requires at least three characters.
 
-## Telnyx.createConection
+## Telnyx.createNewConection
 Create new connection
 
 | Field                         | Type       | Description

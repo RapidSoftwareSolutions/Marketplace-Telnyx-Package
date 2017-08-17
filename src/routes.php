@@ -79,7 +79,6 @@
        'deleteConnection',
        'updateConnection',
        'getSingleConnection',
-       'createConnection',
        'listConnections',
        'deleteAddress',
        'updateAddress',
