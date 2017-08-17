@@ -194,7 +194,8 @@
         },
         {
           "name": "method",
-          "type": "String",
+          "type": "Select",
+          "options": ["GET", "POST"],
           "info": "Method of the profile",
           "required": false
         }
@@ -292,7 +293,8 @@
         },
         {
           "name": "method",
-          "type": "String",
+          "type": "Select",
+          "options": ["GET", "POST"],
           "info": "Method of the profile",
           "required": false
         }
@@ -732,7 +734,7 @@
           "name": "countryCode",
           "type": "String",
           "info": "2-digit country code",
-          "required": false
+          "required": true
         },
         {
           "name": "addressBook",

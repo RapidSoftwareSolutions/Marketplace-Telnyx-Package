@@ -15,14 +15,22 @@ $app->post('/api/Telnyx/createCdrRequest', function ($request, $response, $args)
     $query_str = $settings['api_url'] . 'reporting/cdr_requests';
     $post_data['args']['startTime'] = \Models\ParamsModifier::timeToFormat($post_data['args']['startTime'], 'Y-m-d\TH:i:s\Z');
     $post_data['args']['endTime'] = \Models\ParamsModifier::timeToFormat($post_data['args']['endTime'], 'Y-m-d\TH:i:s\Z');
+    foreach ($post_data['args']['recordTypes'] as $recordType) {
+        $recordTypes[] = (int)$recordType;
+    }
+    $post_data['args']['recordTypes'] = $recordTypes;
+    foreach ($post_data['args']['callTypes'] as $callType) {
+        $callTypes[] = (int)$callType;
+    }
+    $post_data['args']['callTypes'] = $callTypes;
     $params = [
         'start_time' => 'startTime',
         'end_time' => 'endTime',
-        'call_types'=> 'callTypes',
-        'record_types'=> 'recordTypes',
-        'connections'=> 'connections',
-        'report_name'=> 'reportName',
-        'filters'=> 'filters'
+        'call_types' => 'callTypes',
+        'record_types' => 'recordTypes',
+        'connections' => 'connections',
+        'report_name' => 'reportName',
+        'filters' => 'filters'
     ];
     $result = \Models\ApiRequestFacade::makeRequest($params, $post_data, $query_str, 'POST', 'json');
     return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);

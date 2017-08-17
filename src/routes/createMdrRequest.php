@@ -15,6 +15,13 @@ $app->post('/api/Telnyx/createMdrRequest', function ($request, $response, $args)
     $query_str = $settings['api_url'] . 'reporting/mdr_requests';
     $post_data['args']['startTime'] = \Models\ParamsModifier::timeToFormat($post_data['args']['startTime'], 'Y-m-d\TH:i:s\Z');
     $post_data['args']['endTime'] = \Models\ParamsModifier::timeToFormat($post_data['args']['endTime'], 'Y-m-d\TH:i:s\Z');
+    foreach ($post_data['args']['recordTypes'] as $recordType) {
+        $recordTypes[] = (int)$recordType;
+    }
+    $post_data['args']['recordTypes'] = $recordTypes;
+    foreach ($post_data['args']['callTypes'] as $callType) {
+        $callTypes[] = (int)$callType;
+    }
     $params = [
         'start_time' => 'startTime',
         'end_time' => 'endTime',
