@@ -1115,20 +1115,6 @@ Returns all mdr_requests that the user has access to
 | page    | Number     | Page number of results to load
 | perPage | Number     | Number of results per page
 
-## Telnyx.createMdrRequest
-Create a new mdr_request
-
-| Field      | Type       | Description
-|------------|------------|----------
-| apiToken   | credentials| Api token received from Telnyx
-| username   | credentials| Your Telnyx username (email)
-| startTime  | DatePicker | Report start time
-| endTime    | DatePicker | Report end time.  Must be less than 24 hours from now
-| callTypes  | List       | Inbound = 1, Outbound = 2
-| recordTypes| List       | Complete = 1, Incomplete = 2, Errors = 3
-| connections| List       | Array of connection IDs
-| reportName | String     | Name of the report
-| filters    | List       | The 'filters' field specifies a list of query criteria
 
 ## Telnyx.getMdrRequestStatus
 Get the status of a MDR request. Response includes a link to the report once it is generated.
@@ -1158,17 +1144,6 @@ Returns all MDR usage reports that the user has access to
 | page    | Number     | Page number of results to load
 | perPage | Number     | Number of results per page
 
-## Telnyx.createMdrUsageReport
-Create a new mdr usage report
-
-| Field          | Type       | Description
-|----------------|------------|----------
-| apiToken       | credentials| Api token received from Telnyx
-| username       | credentials| Your Telnyx username (email)
-| startTime      | DatePicker | Report start time
-| endTime        | DatePicker | Report end time.  Must be less than 24 hours from now
-| aggregationType| Select     | Aggregate: All = 0, By Connection = 1
-| connections    | List       | Array of connection IDs
 
 ## Telnyx.getMdrUsageReportStatus
 Get the status of MDR usage report. Response includes a link to the report once it is generated.

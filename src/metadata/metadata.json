@@ -195,7 +195,10 @@
         {
           "name": "method",
           "type": "Select",
-          "options": ["GET", "POST"],
+          "options": [
+            "GET",
+            "POST"
+          ],
           "info": "Method of the profile",
           "required": false
         }
@@ -294,7 +297,10 @@
         {
           "name": "method",
           "type": "Select",
-          "options": ["GET", "POST"],
+          "options": [
+            "GET",
+            "POST"
+          ],
           "info": "Method of the profile",
           "required": false
         }
@@ -5256,105 +5262,6 @@
       ]
     },
     {
-      "name": "createMdrRequest",
-      "description": "Create a new mdr_request",
-      "args": [
-        {
-          "name": "apiToken",
-          "type": "credentials",
-          "info": "Api token received from Telnyx",
-          "required": true
-        },
-        {
-          "name": "username",
-          "type": "credentials",
-          "info": "Your Telnyx username (email)",
-          "required": true
-        },
-        {
-          "name": "startTime",
-          "type": "DatePicker",
-          "info": "Report start time",
-          "required": true
-        },
-        {
-          "name": "endTime",
-          "type": "DatePicker",
-          "info": "Report end time.  Must be less than 24 hours from now",
-          "required": true
-        },
-        {
-          "name": "callTypes",
-          "type": "List",
-          "structure": {
-            "name": "callType",
-            "type": "Select",
-            "options": [
-              "1",
-              "2"
-            ],
-            "info": "Single call type"
-          },
-          "info": "Inbound = 1, Outbound = 2",
-          "required": false
-        },
-        {
-          "name": "recordTypes",
-          "type": "List",
-          "structure": {
-            "name": "callType",
-            "type": "Select",
-            "options": [
-              "1",
-              "2",
-              "3"
-            ],
-            "info": "Single record type"
-          },
-          "info": "Complete = 1, Incomplete = 2, Errors = 3",
-          "required": false
-        },
-        {
-          "name": "connections",
-          "type": "List",
-          "structure": {
-            "name": "connection",
-            "type": "String",
-            "info": "Single connection id"
-          },
-          "info": "Array of connection IDs",
-          "required": false
-        },
-        {
-          "name": "reportName",
-          "type": "String",
-          "info": "Name of the report",
-          "required": false
-        },
-        {
-          "name": "filters",
-          "type": "List",
-          "structure": {
-            "name": "filter",
-            "type": "JSON",
-            "info": "JSON filter object"
-          },
-          "info": "The 'filters' field specifies a list of query criteria",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
       "name": "getMdrRequestStatus",
       "description": "Get the status of a MDR request. Response includes a link to the report once it is generated.",
       "args": [
@@ -5448,67 +5355,6 @@
           "name": "perPage",
           "type": "Number",
           "info": "Number of results per page",
-          "required": false
-        }
-      ],
-      "callbacks": [
-        {
-          "name": "error",
-          "info": "Error"
-        },
-        {
-          "name": "success",
-          "info": "Success"
-        }
-      ]
-    },
-    {
-      "name": "createMdrUsageReport",
-      "description": "Create a new mdr usage report",
-      "args": [
-        {
-          "name": "apiToken",
-          "type": "credentials",
-          "info": "Api token received from Telnyx",
-          "required": true
-        },
-        {
-          "name": "username",
-          "type": "credentials",
-          "info": "Your Telnyx username (email)",
-          "required": true
-        },
-        {
-          "name": "startTime",
-          "type": "DatePicker",
-          "info": "Report start time",
-          "required": true
-        },
-        {
-          "name": "endTime",
-          "type": "DatePicker",
-          "info": "Report end time.  Must be less than 24 hours from now",
-          "required": false
-        },
-        {
-          "name": "aggregationType",
-          "type": "Select",
-          "options": [
-            "0",
-            "1"
-          ],
-          "info": "Aggregate: All = 0, By Connection = 1",
-          "required": false
-        },
-        {
-          "name": "connections",
-          "type": "List",
-          "structure": {
-            "name": "connection",
-            "type": "String",
-            "info": "Single connection id"
-          },
-          "info": "Array of connection IDs",
           "required": false
         }
       ],
